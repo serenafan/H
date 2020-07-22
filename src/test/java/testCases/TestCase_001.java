@@ -28,7 +28,7 @@ public class TestCase_001 extends BaseClass{
 		landingPg.clickAllowButton();
 		logger.info("Click allow to access photos, media and files");
 		
-		//Somehow it appium exits game automatically and have to go into the game again
+		//Somehow appium exits game automatically and have to go into the game again
 		landingPg.clickIntoGame();
 		logger.info("Click into Huuuge Casino game");
 		

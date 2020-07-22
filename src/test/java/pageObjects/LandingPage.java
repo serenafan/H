@@ -2,18 +2,18 @@ package pageObjects;
 
 import java.io.IOException;
 
-import org.openqa.selenium.By;
+
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import utilities.GetImageB64;
+import utilities.ProcessingImage;
 
-public class LandingPage extends GetImageB64 {
+public class LandingPage extends ProcessingImage {
 	AndroidDriver<AndroidElement> driver;   
 	public LandingPage(AndroidDriver<AndroidElement> driver)
 	{
@@ -31,9 +31,7 @@ public class LandingPage extends GetImageB64 {
 	
 	//Click Ok Button
 	public void clickOkButton() throws IOException {
-		WebDriverWait wait=new WebDriverWait(driver,5);
-	     By okImage = MobileBy.image(getReferenceImageB64("okButton.png"));
-	     wait.until(ExpectedConditions.presenceOfElementLocated(okImage)).click();
+		waitAndClickImage(driver,5,"okButton.png");
 	}
 	
 	//click allow on access button
@@ -52,25 +50,19 @@ public class LandingPage extends GetImageB64 {
 	
 	//Accept legal document
 	public void clickAcceptButton() throws IOException {
-		WebDriverWait wait=new WebDriverWait(driver,200);
-	     By acceptImage = MobileBy.image(getReferenceImageB64("Accept.png"));
-	     wait.until(ExpectedConditions.presenceOfElementLocated(acceptImage)).click();
+		waitAndClickImage(driver,200,"Accept.png");
 	}
 	
 	
 	//Click play as guest on "who are you" popup
 	public void clickPlayGuestBtn() throws IOException {
-		WebDriverWait wait=new WebDriverWait(driver,200);
-	     By playGuestImg = MobileBy.image(getReferenceImageB64("PlayAsGuest.png"));
-	     wait.until(ExpectedConditions.presenceOfElementLocated(playGuestImg)).click();
+		waitAndClickImage(driver,10,"PlayAsGuest.png");
 	}
 	
 	
 	//Click "God of SKy" button
 	public void clickGodOfSky() throws IOException {
-		WebDriverWait wait=new WebDriverWait(driver,200);
-	     By godSkyImg = MobileBy.image(getReferenceImageB64("godOfSky.png"));
-	     wait.until(ExpectedConditions.presenceOfElementLocated(godSkyImg)).click();
+		waitAndClickImage(driver,5,"godOfSky.png");
 	}
 	
 
